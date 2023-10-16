@@ -1,4 +1,4 @@
-# Bus Routes Project
+# Bus Routes Demo in Kotlin (Fetch network data periodically and store in database)
 
 The "Bus Routes" project is a demo application that showcases the use of MVVM architecture, Clean Architecture principles, network calls with Retrofit, Hilt for dependency injection, and periodic API calls to fetch bus route data. The application stores the network data in a Room database and displays it in the user interface.
 
@@ -33,4 +33,8 @@ The project relies on the following key dependencies:
 - [Hilt](https://developer.android.com/training/dependency-injection/hilt-android): For dependency injection.
 - [Room](https://developer.android.com/training/data-storage/room): For local data storage.
 
+## Code Structure and Demo SS
+
+<img src="https://github.com/PanktiSP13/BusRouteDemo/assets/58383702/de4b4543-c316-4b99-af10-9dc0ced226e8" width="350" >
+<img src="https://github.com/PanktiSP13/BusRouteDemo/assets/58383702/ed4c8927-29a5-4c76-8e1f-4b2a9d1953bf" width="350" >
 ---
