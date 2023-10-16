@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Assignment</string>
+    <string name="routes">Routes</string>
+    <string name="start">Start </string>
+    <string name="finish">" - Finish"</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="no_instance_found">no instance found</string>
+
+
+</resources>
