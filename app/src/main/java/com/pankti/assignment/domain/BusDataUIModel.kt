@@ -10,4 +10,5 @@ data class BusDataUIModel(
     val source: String="",
     val tripDuration: String="",
     val destination: String="",
+    var isBusAvailable : Boolean = false,
     var busTrack : List<RouteTiming> = emptyList())

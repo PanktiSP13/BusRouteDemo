@@ -1,30 +1,32 @@
 package com.pankti.assignment.ui
 
-import android.content.Context
-import java.io.IOException
-import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.Locale
 
 object Utils {
 
-    fun readJsonFromAssets(context: Context, fileName: String): String {
-        val json: String
-        try {
-            val inputStream = context.assets.open(fileName)
-            json = inputStream.bufferedReader().use { it.readText() }
-        } catch (e: IOException) {
-            e.printStackTrace()
-            return ""
-        }
-        return json
-    }
 
     fun String.toFormat(): Date {
-        return try { SimpleDateFormat("hh:mm").parse(this) }catch (e:Exception){ Date()}
+        return SimpleDateFormat("hh:mm", Locale.getDefault()).parse(this) ?: Date()
     }
 
-    fun Date.isBusAvailable():Boolean{
-       return if (this.after(Date()) || this == Date()) return true else false
+
+    fun String.isBusAvailable(): Boolean {
+        return try {
+
+            val format = SimpleDateFormat("HH:mm", Locale.getDefault())
+            val busDateTimeFormat = format.format(format.parse(this)?: Date())
+            val currentTimeFormat = format.format(Date())
+
+            val result = busDateTimeFormat.compareTo(currentTimeFormat)
+            result > 0 || result == 0
+
+        } catch (e: Exception) {
+            false
+        }
     }
+
 }
+
+

@@ -30,7 +30,7 @@ class BusRouteViewModel @Inject constructor(private val repository: BusRouteRepo
     private fun fetchAndStoreBusRouteDetail() {
         var count = 1
         viewModelScope.launch {
-            do{
+           do{
                 repository.fetchAndStoreBusRouteDetail { errorMessage.postValue(it) }
                 Log.e("@@@", "getBusRouteData: $count")
                 count++
@@ -43,7 +43,7 @@ class BusRouteViewModel @Inject constructor(private val repository: BusRouteRepo
 
     private fun getBusRouteDataFromDB(){
         viewModelScope.launch{
-           _busDataModel.postValue(repository.getBusRouteDetailFromDB())
+           _busDataModel.postValue(repository.getBusRouteDetailFromDB().filter { it.isBusAvailable })
         }
     }
 
